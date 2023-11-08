@@ -25,7 +25,7 @@ const SysInfo = () => {
     }, []);
 
     return (
-        <>
+        <div className='mb-6'>
             <div className='flex flex-row gap-[200px]'>
                 <div className='flex flex-row gap-[60px]'>
                     <div>System load:</div>
@@ -58,7 +58,7 @@ const SysInfo = () => {
                     <div>0.0.0.0</div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

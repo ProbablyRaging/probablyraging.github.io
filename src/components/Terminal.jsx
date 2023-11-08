@@ -24,8 +24,8 @@ const Terminal = () => {
     return (
         <div className='flex flex-row'>
             <span className='text-[#26cd99]'>~/dev$:&nbsp;</span>
-            <div className='font-bold text-white'>{terminal}</div>
-            <div className='cursor font-bold text-white'>█</div>
+            <span>{terminal}</span>
+            <span className='cursor'>█</span>
         </div>
     );
 }

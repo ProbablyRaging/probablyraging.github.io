@@ -4,24 +4,19 @@ import { Terminal, Contact, SysInfo } from '../components';
 const Page = () => {
     return (
         <>
-            <div className='sm:hidden flex flex-col place-content-center m-auto max-w-4xl min-h-screen box-border px-8 py-16 lg:px-6 lg:py-0 text-2xl'>
-                <div className='font-bold text-white'>
-                    <div className='flex flex-col mb-6'>
+            <div className='sm:hidden flex flex-col place-content-center m-auto max-w-4xl min-h-screen box-border px-8 py-16 lg:px-6 lg:py-0 text-2xl text-white font-bold'>
+                <p>Welcome to RageOS (GNU/Linux 5.4.0-1101 x86_64)</p>
 
-                        <p>Welcome to RageOS (GNU/Linux 5.4.0-1101 x86_64)</p>
+                <Contact />
 
-                        <Contact />
+                <p>Information up to date as of Nov 7 09:46:53 2023</p>
 
-                        <p>Information up to date as of Nov 7 09:46:53 2023</p>
-
-                        <SysInfo />
-                    </div>
-                </div>
+                <SysInfo />
 
                 <Terminal />
             </div>
 
-            <div className='smup:hidden flex flex-col place-content-center items-center m-auto max-w-4xl min-h-screen box-border px-8 py-16 lg:px-6 lg:py-0 text-lg'>
+            <div className='smup:hidden flex flex-col place-content-center items-center m-auto max-w-4xl min-h-screen box-border px-8 py-16 lg:px-6 lg:py-0 text-lg text-white font-bold'>
                 <Terminal />
 
                 <Contact />
