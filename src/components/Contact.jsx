@@ -1,7 +1,5 @@
 import React from 'react';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { SiGithub, SiDiscord, SiGmail } from "@icons-pack/react-simple-icons";
 
 const Contact = () => {
     return (
@@ -29,9 +27,9 @@ const Contact = () => {
             </div>
 
             <div className='smup:hidden flex flex-row gap-10 absolute top-[60%]'>
-                <div><a href="https://github.com/probablyraging" target='_blank' rel="external noopener noreferrer"><GitHubIcon className='text-white text-3xl' /></a></div>
-                <div><a href="https://discord.com/users/438434841617367080" target='_blank' rel="external noopener noreferrer"><TelegramIcon className='text-white text-3xl' /></a></div>
-                <div><a href="mailto:probablyraging@gmail.com" target='_blank' rel="external noopener noreferrer"><MailOutlineIcon className='text-white text-3xl' /></a></div>
+                <div><a href="https://github.com/probablyraging" target='_blank' rel="external noopener noreferrer"><SiGithub className='text-white text-3xl' /></a></div>
+                <div><a href="https://discord.com/users/438434841617367080" target='_blank' rel="external noopener noreferrer"><SiDiscord className='text-white text-3xl' /></a></div>
+                <div><a href="mailto:probablyraging@gmail.com" target='_blank' rel="external noopener noreferrer"><SiGmail className='text-white text-3xl' /></a></div>
             </div>
         </>
     );
