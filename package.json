@@ -1,11 +1,10 @@
 {
-    "name": "contentcreator-react-vite",
+    "name": "probablyraging-react-vite",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "commit": "npm run build && node deploy.config.js",
         "build": "vite build",
         "preview": "vite preview"
     },

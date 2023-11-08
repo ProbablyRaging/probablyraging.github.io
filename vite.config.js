@@ -7,6 +7,7 @@ export default defineConfig({
         react(),
     ],
     build: {
+        outDir: 'docs',
         chunkSizeWarningLimit: 1000,
     },
 });
