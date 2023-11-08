@@ -15,7 +15,9 @@ const Page = () => {
             }
         };
 
-        typeText();
+        setTimeout(() => {
+            typeText();
+        }, 500);
     }, []);
 
     return (
@@ -34,11 +36,16 @@ const Page = () => {
                     </div>
 
                     <div className='flex flex-row gap-[112px]'>
-                        <div>* Contact:</div>
+                        <div>* Discord:</div>
+                        <div><a href="https://discord.com/users/438434841617367080" target='_blank' rel="external noopener noreferrer">ProbablyRaging</a></div>
+                    </div>
+
+                    <div className='flex flex-row gap-[135px]'>
+                        <div>* Email:</div>
                         <div><a href="mailto:probablyraging@gmail.com" target='_blank' rel="external noopener noreferrer">probablyraging@gmail.com</a></div>
                     </div>
 
-                    <p>Information up to date as of Tue Nov 7 22:46:53 AEDT 2023</p>
+                    <p>Information up to date as of Nov 7 09:46:53 2023</p>
 
                     <div className='flex flex-row gap-[200px]'>
                         <div className='flex flex-row gap-[60px]'>
@@ -51,10 +58,10 @@ const Page = () => {
                         </div>
                     </div>
 
-                    <div className='flex flex-row gap-[55px]'>
+                    <div className='flex flex-row gap-[42px]'>
                         <div className='flex flex-row gap-[73px]'>
                             <div>Usage of /:</div>
-                            <div>35.3% of 28.89GB</div>
+                            <div>15.3% of 128.89GB</div>
                         </div>
                         <div className='flex flex-row gap-12'>
                             <div>Active users:</div>
@@ -62,10 +69,10 @@ const Page = () => {
                         </div>
                     </div>
 
-                    <div className='flex flex-row gap-[214px]'>
+                    <div className='flex flex-row gap-[211px]'>
                         <div className='flex flex-row gap-12'>
                             <div>Memory usage:</div>
-                            <div>55%</div>
+                            <div>24%</div>
                         </div>
                         <div className='flex flex-row gap-12'>
                             <div>eth0 address:</div>
