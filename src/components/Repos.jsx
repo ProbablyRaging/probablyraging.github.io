@@ -7,7 +7,7 @@ const Repos = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const token = "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";
+        const token = process.env.GH_TOKEN;
         const githubUsername = "ProbablyRaging";
 
         const query = `{
