@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Terminal = () => {
     const [terminal, setTerminal] = useState('');
-    const [ipAddress, setIpAddress] = useState(null); // Start with null to indicate fetching
+    const [ipAddress, setIpAddress] = useState(null);
 
     useEffect(() => {
         fetch('https://api.ipify.org?format=json')
