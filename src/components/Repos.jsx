@@ -7,36 +7,9 @@ const Repos = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const token = process.env.GH_TOKEN;
-        const githubUsername = "ProbablyRaging";
-
-        const query = `{
-          user(login: "${githubUsername}") {
-            pinnedItems(first: 6, types: REPOSITORY) {
-              nodes {
-                ... on Repository {
-                  name
-                  description
-                  stargazerCount
-                  forkCount
-                  primaryLanguage {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }`;
-
-        axios.post("https://api.github.com/graphql",
-            { query },
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            })
+        axios.get('https://creatordiscord.xyz/api/ghrepos')
             .then((response) => {
-                setPinnedRepos(response.data.data.user.pinnedItems.nodes);
+                setPinnedRepos(response.data.repos.data.user.pinnedItems.nodes);
                 setIsLoading(false);
             })
             .catch((error) => {

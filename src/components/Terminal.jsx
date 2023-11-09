@@ -2,25 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Terminal = () => {
     const [terminal, setTerminal] = useState('');
-    const [ipAddress, setIpAddress] = useState('0.0.0.0');
-
-    // Animate text
-    useEffect(() => {
-        const terminalText = `Connection established via eth0-${ipAddress}`;
-        let currentIndex = 0;
-
-        const typeText = () => {
-            if (currentIndex < terminalText.length) {
-                setTerminal(terminalText.slice(0, currentIndex + 1));
-                currentIndex++;
-                setTimeout(typeText, 50);
-            }
-        };
-
-        setTimeout(() => {
-            typeText();
-        }, 500);
-    }, []);
+    const [ipAddress, setIpAddress] = useState(null); // Start with null to indicate fetching
 
     useEffect(() => {
         fetch('https://api.ipify.org?format=json')
@@ -33,6 +15,26 @@ const Terminal = () => {
                 setIpAddress('Error');
             });
     }, []);
+
+    // Animate text when the IP address is available
+    useEffect(() => {
+        if (ipAddress !== null) {
+            const terminalText = `Connection established via eth0-${ipAddress}`;
+            let currentIndex = 0;
+
+            const typeText = () => {
+                if (currentIndex < terminalText.length) {
+                    setTerminal(terminalText.slice(0, currentIndex + 1));
+                    currentIndex++;
+                    setTimeout(typeText, 50);
+                }
+            };
+
+            setTimeout(() => {
+                typeText();
+            }, 500);
+        }
+    }, [ipAddress]);
 
     return (
         <div className='lg:hidden flex flex-row absolute bottom-3 left-3 text-base'>
