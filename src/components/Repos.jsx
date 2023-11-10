@@ -28,11 +28,11 @@ const Repos = () => {
                     <SkeletonCard isLoading={isLoading} />
                 </div>
             ) : (
-                <div className='font-poppins grid w-full grid-cols-2 sm:grid-cols-1 gap-2 mb-4 smup:mb-10'>
+                <div className='grid w-full grid-cols-2 sm:grid-cols-1 gap-2 mb-4 smup:mb-10'>
                     {pinnedRepos.map((repo, index) => (
                         <motion.div key={index} whileHover={{ scale: 1.015 }} whileTap={{ scale: 0.9 }}>
                             <a href={`https://github.com/probablyraging/${repo.name}`} target='_blank' rel='external noopener noreferrer' className='no-underline'>
-                                <div className='flex w-full min-h-[146px] flex-col rounded-xl bg-white/10 hover:bg-white/20'>
+                                <div className='flex w-full min-h-[146px] flex-col rounded-xl bg-[#1a1a1a] hover:bg-[#333333]'>
                                     <div className='flex gap-2 items-center no-underline h-4 hover:underline mt-4 mr-4  ml-4'>
                                         <img src="https://avatars.githubusercontent.com/u/24839609?v=4" width={'20'} height={'20'} loading='lazy' alt="" />
                                         <p className='text-white text-sm'>

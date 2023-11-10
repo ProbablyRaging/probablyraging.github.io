@@ -37,7 +37,7 @@ const Terminal = () => {
     }, [ipAddress]);
 
     return (
-        <div className='lg:hidden flex flex-row fixed bottom-3 left-3 text-base'>
+        <div className='font-ubuntu lg:hidden flex flex-row fixed bottom-3 left-3 text-base'>
             <span className='text-[#26cd99]'>~/dev$:&nbsp;</span>
             <span>{terminal}</span>
             <span className='cursor'>█</span>

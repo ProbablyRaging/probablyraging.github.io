@@ -9,10 +9,10 @@ const User = () => {
             </div>
             <div className='flex w-full flex-row flex-wrap items-center justify-between gap-2'>
                 <div className='flex flex-col'>
-                    <h1 className='font-poppins text-2xl font-bold m-0'>
+                    <h1 className='text-2xl font-bold m-0'>
                         ProbablyRaging
                     </h1>
-                    <h2 className='font-poppins text-white/50 font-normal text-base m-0'>
+                    <h2 className='text-white/50 font-normal text-base m-0'>
                         Hobbyist Developer
                     </h2>
                 </div>

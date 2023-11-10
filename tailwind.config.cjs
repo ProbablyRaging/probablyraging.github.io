@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                poppins: ["Poppins", "sans-serif"],
+                ubuntu: ["Ubuntu Mono", "monospace"],
             },
         },
         screens: {

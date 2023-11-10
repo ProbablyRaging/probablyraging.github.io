@@ -3,7 +3,7 @@ import { SiReact, SiHtml5, SiTailwindcss, SiJavascript, SiVite, SiMongodb, SiNod
 
 const Technologies = () => {
     return (
-        <div className='font-poppins flex xs:text-center'>
+        <div className='flex xs:text-center'>
             <div className='flex flex-col flex-wrap gap-y-2'>
                 <h2 className='text-base text-white'>
                     Technologies
