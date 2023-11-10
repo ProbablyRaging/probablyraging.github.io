@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Tilt } from 'react-tilt';
 import SkeletonCard from './SkeletonCard';
 import axios from "axios";
+import { motion } from 'framer-motion';
 
 const Repos = () => {
     const [pinnedRepos, setPinnedRepos] = useState([]);
@@ -21,30 +21,30 @@ const Repos = () => {
     return (
         <div>
             {isLoading ? (
-                <div className='grid w-full grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-2 mb-4 smup:mb-10'>
+                <div className='grid w-full grid-cols-2 sm:grid-cols-1 gap-2 mb-4 smup:mb-10'>
                     <SkeletonCard isLoading={isLoading} />
                     <SkeletonCard isLoading={isLoading} />
                     <SkeletonCard isLoading={isLoading} />
                     <SkeletonCard isLoading={isLoading} />
                 </div>
             ) : (
-                <div className='font-poppins grid w-full md:max-w-[96%] grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-2 mb-4 smup:mb-10'>
+                <div className='font-poppins grid w-full grid-cols-2 sm:grid-cols-1 gap-2 mb-4 smup:mb-10'>
                     {pinnedRepos.map((repo, index) => (
-                        <a key={index} href={`https://github.com/probablyraging/${repo.name}`} target='_blank' rel='external noopener noreferrer' className='no-underline'>
-                            <Tilt options={{ max: 15, scale: 1 }}>
-                                <div className='flex w-full min-h-[122px] flex-col rounded-xl bg-white/10 px-4 py-6 pb-0'>
-                                    <div className='flex gap-2 items-center no-underline h-4 hover:underline'>
+                        <motion.div key={index} whileHover={{ scale: 1.015 }} whileTap={{ scale: 0.9 }}>
+                            <a href={`https://github.com/probablyraging/${repo.name}`} target='_blank' rel='external noopener noreferrer' className='no-underline'>
+                                <div className='flex w-full min-h-[146px] flex-col rounded-xl bg-white/10 hover:bg-white/20'>
+                                    <div className='flex gap-2 items-center no-underline h-4 hover:underline mt-4 mr-4  ml-4'>
                                         <img src="https://avatars.githubusercontent.com/u/24839609?v=4" width={'20'} height={'20'} loading='lazy' alt="" />
                                         <p className='text-white text-sm'>
                                             {repo.name}
                                         </p>
                                     </div>
 
-                                    <p className='text-white/50 text-xs grow'>
+                                    <p className='text-white/50 text-xs grow mt-2 mr-4 ml-4'>
                                         {repo.description}
                                     </p>
 
-                                    <div className='flex flex-row items-center gap-4'>
+                                    <div className='flex flex-row items-center gap-4 mr-4 ml-4'>
                                         <p className='flex items-center gap-1 text-white/50 text-sm'>
                                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
@@ -68,8 +68,8 @@ const Repos = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </Tilt>
-                        </a>
+                            </a>
+                        </motion.div>
                     ))}
                 </div>
             )}
