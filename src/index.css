@@ -26,6 +26,7 @@ body {
     place-items: center;
     background-color: var(--background-rgb);
     margin: 0rem;
+    overflow: scroll;
 }
 
 ::-webkit-scrollbar {
