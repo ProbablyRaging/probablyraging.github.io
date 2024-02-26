@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "../../utils/cn";
 import { motion } from "framer-motion";
 
-export const TypewriterEffectSmooth = ({ words, className, cursorClassName, }: { words: { text: string; className?: string; }[]; className?: string; cursorClassName?: string; }) => {
+export const TypewriterEffectSmooth = ({ words, className, cursorClassName, isHovered }: { words: { text: string; className?: string; }[]; className?: string; cursorClassName?: string; isHovered?: boolean }) => {
     // split text inside of words into array of characters
     const wordsArray = words.map((word) => {
         return {
@@ -21,7 +21,7 @@ export const TypewriterEffectSmooth = ({ words, className, cursorClassName, }: {
                                 {word.text.map((char, index) => (
                                     <span
                                         key={`char-${index}`}
-                                        className={cn(`dark:text-white text-black `, word.className)}
+                                        className={cn(isHovered ? 'text-[#2bb7b7]' : 'text-white', word.className)}
                                     >
                                         {char}
                                     </span>
