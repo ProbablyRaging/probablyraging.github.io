@@ -64,17 +64,22 @@ const Page = () => {
                     <div className='flex flex-col gap=0'>
                         <motion.div className="max-w-4xl m-0 text-white text-center text-2xl font-bold" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
                             Hey, I'm <span className='text-black'>ProbablyRaging</span>
-                            {/* <TypewriterEffectSmooth cursorClassName='h-[48px]' words={main} /> */}
                         </motion.div>
                         <motion.p className="text-[14px] m-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
                             Hobbyist Developer
                         </motion.p>
                     </div>
 
-                    <motion.div className='flex flex-row justify-between gap-4 mt-[10%]' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
-                        <SiGithub className='w-[22px] h-[22px] text-black' />
-                        <SiDiscord className='w-[22px] h-[22px] text-black' />
-                        <SiGmail className='w-[22px] h-[22px] text-black' />
+                    <motion.div className='flex flex-row justify-between gap-10 mt-[10%]' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+                        <a href='https://github.com/probablyraging' target='_blank' rel='external noopener noreferrer'>
+                            <SiGithub className='w-[28px] h-[28px] text-black' />
+                        </a>
+                        <a href='https://discord.com/users/438434841617367080' target='_blank' rel='external noopener noreferrer'>
+                            <SiDiscord className='w-[28px] h-[28px] text-black' />
+                        </a>
+                        <a href='mailto:probablyraging@gmail.com' target='_blank' rel='external noopener noreferrer'>
+                            <SiGmail className='w-[28px] h-[28px] text-black' />
+                        </a>
                     </motion.div>
                 </div>
             )}
