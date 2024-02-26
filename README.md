@@ -1,1 +1,1 @@
-## Hi, I'm ProbablyRaging 👋
+## Hi, I'm ProbablyRaging

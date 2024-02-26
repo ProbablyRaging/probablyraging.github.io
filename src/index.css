@@ -18,15 +18,14 @@
 
 html {
     font-family: 'Poppins', sans-serif;
+    height: 100% !important;
+    background-color: #1f2124;
 }
 
 body {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background-color: var(--background-rgb);
-    margin: 0rem;
-    overflow: scroll;
+    background-color: #191a1b;
+    height: 100% !important;
+    margin: 0;
 }
 
 ::-webkit-scrollbar {
@@ -54,169 +53,6 @@ a {
     color: unset;
 }
 
-.screen:after,
-.screen:before {
-    content: "";
-    height: 5px;
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    translate: -50% 0%;
-    background-color: white;
-}
-
-.screen:before {
-    width: 15%;
-    top: 0rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-}
-
-.screen:after {
-    width: 25%;
-    bottom: 0rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-}
-
-@keyframes pan-overlay {
-    from {
-        background-position: 0% 0%;
-    }
-
-    to {
-        background-position: 0% -100%;
-    }
-}
-
-.screen-overlay {
-    background: linear-gradient(var(--primary-rgb),
-            var(--primary-rgb) 3px,
-            transparent 3px,
-            transparent 9px);
-    background-size: 100% 9px;
-    animation: pan-overlay 22s infinite linear;
-}
-
-@keyframes pan-image {
-    0% {
-        background-position: 36% 42%;
-        background-size: 200%;
-    }
-
-    20% {
-        background-position: 30% 35%;
-        background-size: 200%;
-    }
-
-    20.0001% {
-        /* -- View 2 -- */
-        background-position: 60% 85%;
-        background-size: 500%;
-    }
-
-    40% {
-        background-position: 49% 81%;
-        background-size: 500%;
-    }
-
-    40.0001% {
-        /* -- View 3 -- */
-        background-position: 80% 42%;
-        background-size: 300%;
-    }
-
-    60% {
-        background-position: 84% 33%;
-        background-size: 300%;
-    }
-
-    60.0001% {
-        /* -- View 4 -- */
-        background-position: 0% 0%;
-        background-size: 300%;
-    }
-
-    80% {
-        background-position: 15% 4%;
-        background-size: 300%;
-    }
-
-    80.0001% {
-        /* -- View 5 -- */
-        background-position: 80% 10%;
-        background-size: 300%;
-    }
-
-    100% {
-        background-position: 72% 14%;
-        background-size: 300%;
-    }
-}
-
-.screen>.screen-image {
-    background-image: url('https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: 300%;
-    background-position: 0% 0%;
-    animation: pan-image 15s linear infinite;
-}
-
-.screen>.screen-content>.screen-icon {
-    text-shadow: 0px 0px 0.5rem white;
-}
-
-.screen>.screen-content>.screen-user:before,
-.screen>.screen-content>.screen-user:after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    background-color: var(--tertiary-rgb);
-    border-radius: 1rem;
-    box-shadow: 0px 0px 8px 3px var(--tertiary-rgb);
-}
-
-.screen>.screen-content>.screen-user:before {
-    height: 2px;
-    width: 50px;
-    translate: -20px -1rem;
-    opacity: 0.75;
-}
-
-.screen>.screen-content>.screen-user:after {
-    height: 3px;
-    width: 30px;
-    translate: 26px calc(-1rem - 0.5px);
-}
-
-.screen>.screen-content>.screen-user> :is(.name) {
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0px 0px 0.5rem white;
-}
-
-.screen>.screen-content>.screen-user>.name:before {
-    top: 55%;
-    right: -1.5rem;
-}
-
-.screen>.screen-content>.screen-user>.name:after {
-    top: 45%;
-    left: -1.5rem;
-}
-
-/* -- Blob effect -- */
-
-@keyframes rotate {
-    from {
-        rotate: 0deg;
-    }
-
-    50% {
-        scale: 1 1.5;
-    }
-
-    to {
-        rotate: 360deg;
-    }
+#app {
+    height: 100% !important;
 }

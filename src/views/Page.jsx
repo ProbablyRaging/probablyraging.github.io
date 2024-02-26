@@ -1,21 +1,83 @@
-import React from 'react';
-import { Repos, Socials } from '../components';
+import React, { useState, useEffect } from 'react';
+import { MaskContainer } from '../components/ui/svg-mask-effect';
+import { TypewriterEffectSmooth } from '../components/ui/typewriter-effect';
+import { SiGithub, SiDiscord, SiGmail } from "@icons-pack/react-simple-icons";
+import { motion } from "framer-motion";
 
 const Page = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 768);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const main = [
+        {
+            text: `Hey,`
+        },
+        {
+            text: "I'm",
+        },
+        {
+            text: "ProbablyRaging",
+            className: "text-black dark:text-black",
+        }
+    ];
+
     return (
         <React.Fragment>
-            <div className='screen flex overflow-hidden relative z-10 w-[100vw] h-[100vh] border-[3px] border-solid border-[var(--primary-rgb)] aspect-[9/16] bg-[var(--primary-rgb)] bg-opacity-[15%]'>
-                <div className='screen-image h-full w-full absolute z-[1] top-0 left-0 opacity-[0.3]'></div>
-                <div className='screen-overlay h-full w-full absolute z-[2] top-0 left-0'></div>
-                <div className='screen-content relative z-[3] m-4 pb-24 flex flex-col items-center justify-center grow-[1] gap-16 border-[1px] border-solid border-[var(--secondary-rgb)] border-opacity-50 rounded-lg'>
-                    <i className='screen-icon fa-brands fa-codepen text-white text-[4rem]'></i>
-                    <div className='screen-user relative flex flex-col items-center gap-4'>
-                        <span className='name relative text-5xl font-normal xs:text-3xl select-none'>ProbablyRaging</span>
-                        <Socials />
-                        <Repos />
+
+            {!isSmallScreen ? (
+                <MaskContainer className="h-full border rounded-md">
+                    <div className='flex flex-col items-center gap-4 min-w-[500px]'>
+                        <div className='flex flex-col justify-between gap-4'>
+                            <div className='flex flex-row items-center gap-8'>
+                                <SiGithub className='w-[36px] h-[36px]' />
+                                <a href='https://github.com/probablyraging' target='_blank' rel='external noopener noreferrer' className='hover:text-blue-500'>
+                                    Github
+                                </a>
+                            </div>
+                            <div className='flex flex-row items-center gap-8'>
+                                <SiDiscord className='w-[36px] h-[36px]' />
+                                <a href='https://discord.com/users/438434841617367080' target='_blank' rel='external noopener noreferrer' className='hover:text-blue-500'>
+                                    Discord
+                                </a>
+                            </div>
+                            <div className='flex flex-row items-center gap-8'>
+                                <SiGmail className='w-[36px] h-[36px]' />
+                                <a href='mailto:probablyraging@gmail.com' target='_blank' rel='external noopener noreferrer' className='hover:text-blue-500'>
+                                    Email
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                </MaskContainer>
+            ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center bg-[#2fcdcd] text-white">
+                    <div className='flex flex-col gap=0'>
+                        <motion.div className="max-w-4xl m-0 text-white text-center text-2xl font-bold" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+                            Hey, I'm <span className='text-black'>ProbablyRaging</span>
+                            {/* <TypewriterEffectSmooth cursorClassName='h-[48px]' words={main} /> */}
+                        </motion.div>
+                        <motion.p className="text-[14px] m-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+                            Hobbyist Developer
+                        </motion.p>
+                    </div>
+
+                    <motion.div className='flex flex-row justify-between gap-4 mt-[10%]' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+                        <SiGithub className='w-[22px] h-[22px] text-black' />
+                        <SiDiscord className='w-[22px] h-[22px] text-black' />
+                        <SiGmail className='w-[22px] h-[22px] text-black' />
+                    </motion.div>
                 </div>
-            </div>
+            )}
         </React.Fragment>
     );
 };

@@ -1,8 +1,11 @@
 const { nextui } = require("@nextui-org/react");
+const {
+    default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./index.html", "./src/**/*.{js,jsx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
+    content: ["./index.html", "./src/**/*.{js,jsx}", "./src/**/*.{ts,tsx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
             fontFamily: {
@@ -10,24 +13,23 @@ module.exports = {
             },
         },
         screens: {
-            xsup: "480px",
-            ssup: "620px",
-            smup: "769px",
-            mdup: "1060px",
-            lgup: "1200px",
-            xxlup: "1700px",
-            xs: { 'max': '480px' },
-            ss: { 'max': '640px' },
-            sm: { 'max': '768px' },
-            md: { 'max': '1024px' },
-            lg: { 'max': '1280px' },
-            xl: { 'max': '1536px' },
         },
     },
     mode: "jit",
-    plugins: [nextui()],
+    plugins: [nextui(), addVariablesForColors],
     corePlugins: {
         preflight: false,
     },
     important: true,
 };
+
+function addVariablesForColors({ addBase, theme }) {
+    let allColors = flattenColorPalette(theme("colors"));
+    let newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    );
+
+    addBase({
+        ":root": newVars,
+    });
+}
