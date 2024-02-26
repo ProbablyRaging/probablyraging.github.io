@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { MaskContainer } from '../components/ui/svg-mask-effect';
-import { TypewriterEffectSmooth } from '../components/ui/typewriter-effect';
 import { SiGithub, SiDiscord, SiGmail } from "@icons-pack/react-simple-icons";
 import { motion } from "framer-motion";
 
@@ -17,19 +16,6 @@ const Page = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
-    const main = [
-        {
-            text: `Hey,`
-        },
-        {
-            text: "I'm",
-        },
-        {
-            text: "ProbablyRaging",
-            className: "text-black dark:text-black",
-        }
-    ];
 
     return (
         <React.Fragment>
