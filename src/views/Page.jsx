@@ -9,7 +9,7 @@ const Page = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 768);
+            setIsSmallScreen(window.innerWidth < 930);
         };
         handleResize();
         window.addEventListener('resize', handleResize);
