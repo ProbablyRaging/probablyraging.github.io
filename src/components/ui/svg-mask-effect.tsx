@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
+import { hover_me } from "../../assets";
 
 export const MaskContainer = ({
     children,
@@ -107,8 +108,11 @@ export const MaskContainer = ({
 
                 <div className="w-full h-full flex items-center justify-center bg-[#2fcdcd] text-white">
                     <div className='flex flex-col gap=0'>
-                        <div className="max-w-4xl m-0 text-white text-center text-4xl font-bold">
+                        <div className={`${isHovered ? '' : 'relative'} max-w-4xl m-0 text-white text-center text-4xl font-bold`}>
                             {/* Hey, I'm <span className={isHovered ? '' : 'text-black'}>ProbablyRaging</span>. */}
+                            <motion.div className={`${isHovered ? 'hidden' : 'absolute'} bottom-[32px] left-[-98px]`} animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity }}>
+                                <motion.img src={hover_me} alt="hover me" width='100px' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 3 }} />
+                            </motion.div>
                             <TypewriterEffectSmooth isHovered={isHovered} cursorClassName='h-[48px]' words={main} />
                         </div>
                         <motion.p className={`${isHovered ? 'text-[#2bb7b7]' : 'text-white'} text-[18px] m-0`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.3 }}>
