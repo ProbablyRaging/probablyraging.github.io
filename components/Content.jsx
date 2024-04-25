@@ -37,7 +37,7 @@ export default function Content() {
                     </motion.span>
                 </div>
 
-                <div className='absolute bottom-32 left-50 cursor-pointer' onClick={handleScrollClick}>
+                <div className='absolute bottom-10 left-50 cursor-pointer' onClick={handleScrollClick}>
                     <div className='flex justify-center w-[30px] h-[70px] border-4 border-neutral-300 rounded-full'>
                         <motion.div
                             className='w-[10px] h-[40px]'

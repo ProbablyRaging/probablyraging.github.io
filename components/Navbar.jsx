@@ -66,12 +66,18 @@ export default function Navbar() {
                 </Link>
 
                 <div className='flex gap-16 font-medium'>
-                    {weather && (
+                    {weather ? (
                         <div className='flex items-center gap-1'>
                             <span>{weather.current.temp_c}°C</span>
-                            <img src={weather.current.condition.icon} width={32} height={32} alt="" />
+                            <img src={weather.current.condition.icon} width={32} height={32} alt="weather icon" />
                             <span>SYDNEY</span>
                             <span>{weather.location.localtime.split(' ')[1]}</span>
+                        </div>
+                    ) : (
+                        <div className='flex items-center gap-1'>
+                            <span className='mr-10'>0°C</span>
+                            <span>SYDNEY</span>
+                            <span>00:00</span>
                         </div>
                     )}
 

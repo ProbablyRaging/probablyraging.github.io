@@ -24,7 +24,7 @@ export default function Tooling() {
             <div className='font-yaro-black text-[100px] mt-28 mr-20'>
                 <motion.div
                     className='relative'
-                    initial={{ x: -999, opacity: 0 }}
+                    initial={{ x: 999, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{
