@@ -4,11 +4,11 @@ import { ScreenContext } from './Layout';
 
 export default function Content() {
     const isSmallScreen = useContext(ScreenContext);
-    const count = useMotionValue(2010);
+    const count = useMotionValue(2008);
     const rounded = useTransform(count, Math.round);
 
     useEffect(() => {
-        const animation = animate(count, 2019, { duration: 3 });
+        const animation = animate(count, 2016, { duration: 1.5 });
         return animation.stop;
     }, []);
 
