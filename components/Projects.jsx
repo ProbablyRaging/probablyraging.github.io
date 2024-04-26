@@ -20,7 +20,7 @@ export default function Projects() {
     }
 
     return (
-        <div id='projects' className='relative flex flex-col h-full bg-dazzle'>
+        <div id='projects' className='relative flex flex-col h-full bg-dazzle overflow-hidden'>
             <div className='font-yaro-black text-[100px] mt-28 ml-20'>
                 <motion.div
                     className='relative'

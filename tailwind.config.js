@@ -8,7 +8,8 @@ module.exports = {
         extend: {
             colors: {
                 'base': '#353e3d',
-                'dazzle': '#ed7d22'
+                'dazzle': '#ed7d22',
+                'overlay': '#151918'
             },
             styles: {
                 'backdrop-blur-glass': {

@@ -20,7 +20,7 @@ export default function Tooling() {
     }
 
     return (
-        <div className='relative flex flex-col h-full'>
+        <div className='relative flex flex-col h-full overflow-hidden'>
             <div className='font-yaro-black text-[100px] mt-28 mr-20'>
                 <motion.div
                     className='relative'

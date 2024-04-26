@@ -19,6 +19,10 @@ export default function Layout({ children }) {
         };
     }, []);
 
+    useEffect(() => {
+        console.log(isSmallScreen);
+    }, [isSmallScreen])
+
     return (
         <React.Fragment>
             <Head>
@@ -49,9 +53,7 @@ export default function Layout({ children }) {
 
             <ScreenContext.Provider value={isSmallScreen}>
                 <Navbar />
-                <main className='h-screen'>
-                    {children}
-                </main>
+                {children}
                 <Footer />
             </ScreenContext.Provider>
         </React.Fragment>
