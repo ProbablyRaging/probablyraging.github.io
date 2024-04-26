@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
+import LoadingAnimation from '@/components/LoadingAnimation';
 import Content from '@/components/Content';
 import Projects from '@/components/Projects';
-import Tooling from '@/components/Tooling';
-import LoadingAnimation from '@/components/LoadingAnimation';
+import ComingSoon from '@/components/ComingSoon';
 
 export default function index() {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ export default function index() {
                 <main className='h-screen'>
                     <Content />
                     <Projects />
-                    <Tooling />
+                    <ComingSoon />
                 </main>
             )}
         </Layout>

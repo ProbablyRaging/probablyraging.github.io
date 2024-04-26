@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -34,6 +35,7 @@ export default function Layout({ children }) {
                 <meta name='author' content='probablyraging' />
 
                 <meta httpEquiv='content-language' content='en' />
+                <meta name="theme-color" content="#151918" />
 
                 <meta property='og:title' content='probablyraging.dev' />
                 <meta property='og:description' content='Creating good shit since 2016' />
@@ -47,9 +49,8 @@ export default function Layout({ children }) {
                 <meta name='twitter:image' content='/ogimage.png' />
 
                 <link rel='canonical' href='https://shitestate.io' />
-
-                <script src='//code.tidio.co/9n1rsvfxyx3xdjx5haw0ckqtuumdvqid.js' async />
             </Head>
+            <Script src='//code.tidio.co/9n1rsvfxyx3xdjx5haw0ckqtuumdvqid.js' />
 
             <ScreenContext.Provider value={isSmallScreen}>
                 <Navbar />

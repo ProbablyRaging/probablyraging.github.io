@@ -21,13 +21,13 @@ export default function Footer() {
                     delay: 0,
                 }}
             >
-                <span className='font-bold text-[35px] leading-[35px]'>
+                <p className='font-bold text-[35px] leading-[35px]'>
                     PROBABLY
-                </span>
+                </p>
 
-                <span className='font-bold text-[30px] text-dazzle leading-[35px]'>
+                <p className='font-bold text-[30px] text-dazzle leading-[35px]'>
                     RAGING.DEV
-                </span>
+                </p>
             </motion.div>
         )
     }

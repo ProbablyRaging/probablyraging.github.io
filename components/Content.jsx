@@ -20,18 +20,18 @@ export default function Content() {
         return (
             <div className='flex flex-col items-center h-full pt-20'>
                 <div className='flex flex-col items-center'>
-                    <span className='font-yaro-black text-[70px] leading-[70px]'>
+                    <p className='font-yaro-black text-[70px] leading-[70px]'>
                         MAKING
-                    </span>
-                    <span className='font-yaro-black text-[70px] leading-[70px] text-dazzle font-stroke'>
+                    </p>
+                    <p className='font-yaro-black text-[70px] leading-[70px] text-dazzle font-stroke'>
                         GOOD
-                    </span>
-                    <span className='font-yaro-black text-[70px] leading-[70px] text-dazzle font-stroke'>
+                    </p>
+                    <p className='font-yaro-black text-[70px] leading-[70px] text-dazzle font-stroke'>
                         SHIT
-                    </span>
-                    <span className='font-yaro-black text-[70px] leading-[70px]'>
+                    </p>
+                    <p className='font-yaro-black text-[70px] leading-[70px]'>
                         SINCE
-                    </span>
+                    </p>
                     <motion.span className='font-yaro-black text-[70px] leading-[70px]'>
                         {rounded}
                     </motion.span>
@@ -56,18 +56,18 @@ export default function Content() {
     return (
         <div className='flex flex-col justify-center items-center h-full'>
             <div className='flex flex-col items-center'>
-                <span className='font-yaro-black text-[100px] leading-[90px]'>
+                <p className='font-yaro-black text-[100px] leading-[90px]'>
                     MAKING
-                </span>
-                <span className='font-yaro-black text-[100px] leading-[90px] text-dazzle font-stroke'>
+                </p>
+                <p className='font-yaro-black text-[100px] leading-[90px] text-dazzle font-stroke'>
                     GOOD
-                </span>
-                <span className='font-yaro-black text-[100px] leading-[90px] text-dazzle font-stroke'>
+                </p>
+                <p className='font-yaro-black text-[100px] leading-[90px] text-dazzle font-stroke'>
                     SHIT
-                </span>
-                <span className='font-yaro-black text-[100px] leading-[90px]'>
+                </p>
+                <p className='font-yaro-black text-[100px] leading-[90px]'>
                     SINCE
-                </span>
+                </p>
                 <motion.span className='font-yaro-black text-[100px] leading-[90px]'>
                     {rounded}
                 </motion.span>
