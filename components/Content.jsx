@@ -1,90 +1,85 @@
-import React, { useEffect, useContext } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { ScreenContext } from './Layout';
+import React from 'react';
+import Link from 'next/link';
+import { FaGithub, FaDiscord } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 export default function Content() {
-    const isSmallScreen = useContext(ScreenContext);
-    const count = useMotionValue(2008);
-    const rounded = useTransform(count, Math.round);
-
-    useEffect(() => {
-        const animation = animate(count, 2016, { duration: 1.5 });
-        return animation.stop;
-    }, []);
-
-    const handleScrollClick = () => {
-        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-    };
-
-    if (isSmallScreen) {
-        return (
-            <div className='flex flex-col items-center h-full pt-20'>
-                <div className='flex flex-col items-center'>
-                    <p className='font-yaro-black text-[70px] leading-[70px]'>
-                        MAKING
-                    </p>
-                    <p className='font-yaro-black text-[70px] leading-[70px] text-dazzle font-stroke'>
-                        GOOD
-                    </p>
-                    <p className='font-yaro-black text-[70px] leading-[70px] text-dazzle font-stroke'>
-                        SHIT
-                    </p>
-                    <p className='font-yaro-black text-[70px] leading-[70px]'>
-                        SINCE
-                    </p>
-                    <motion.span className='font-yaro-black text-[70px] leading-[70px]'>
-                        {rounded}
-                    </motion.span>
-                </div>
-
-                <div className='absolute bottom-10 left-50 cursor-pointer' onClick={handleScrollClick}>
-                    <div className='flex justify-center w-[30px] h-[70px] border-4 border-neutral-300 rounded-full'>
-                        <motion.div
-                            className='w-[10px] h-[40px]'
-                            initial={{ y: '10%', opacity: 1, scale: 1 }}
-                            animate={{ y: '100%', opacity: [1, 1, 0], scale: [1, 1, 0] }}
-                            transition={{ duration: 1.5, repeat: Infinity, repeatType: 'loop' }}
-                        >
-                            <div className='w-[10px] h-[10px] bg-dazzle rounded-full'></div>
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
     return (
-        <div className='flex flex-col justify-center items-center h-full'>
-            <div className='flex flex-col items-center'>
-                <p className='font-yaro-black text-[100px] leading-[90px]'>
-                    MAKING
-                </p>
-                <p className='font-yaro-black text-[100px] leading-[90px] text-dazzle font-stroke'>
-                    GOOD
-                </p>
-                <p className='font-yaro-black text-[100px] leading-[90px] text-dazzle font-stroke'>
-                    SHIT
-                </p>
-                <p className='font-yaro-black text-[100px] leading-[90px]'>
-                    SINCE
-                </p>
-                <motion.span className='font-yaro-black text-[100px] leading-[90px]'>
-                    {rounded}
-                </motion.span>
-            </div>
-
-            <div className='absolute bottom-32 left-50 cursor-pointer' onClick={handleScrollClick}>
-                <div className='flex justify-center w-[30px] h-[70px] border-4 border-neutral-300 rounded-full'>
-                    <motion.div
-                        className='w-[10px] h-[40px]'
-                        initial={{ y: '10%', opacity: 1, scale: 1 }}
-                        animate={{ y: '100%', opacity: [1, 1, 0], scale: [1, 1, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, repeatType: 'loop' }}
+        <React.Fragment>
+            <div className='flex justify-center items-center h-full min-h-screen'>
+                <div className='flex justify-center items-center flex-col'>
+                    <motion.p
+                        className='layered-sm font-black text-dazzle select-none text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl'
+                        initial={{ y: -500 }}
+                        animate={{ y: 0 }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 260,
+                            damping: 20,
+                            delay: 0.2,
+                        }}
                     >
-                        <div className='w-[10px] h-[10px] bg-dazzle rounded-full'></div>
+                        ProbablyRaging.
+                    </motion.p>
+                    <motion.div
+                        className='flex items-center gap-10 text-alt mt-28 text-4xl md:text-5xl lg:text-6xl'
+                        initial={{ y: 500 }}
+                        animate={{ y: 0 }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 260,
+                            damping: 23,
+                            delay: 0.5,
+                        }}
+                    >
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{
+                                duration: .1,
+                                type: 'spring',
+                                stiffness: 200,
+                                damping: 10,
+                            }}
+                        >
+                            <Link href={'https://github.com/probablyraging'} target='_blank'>
+                                <FaGithub />
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{
+                                duration: .1,
+                                type: 'spring',
+                                stiffness: 200,
+                                damping: 10,
+                            }}
+                        >
+                            <Link href={'https://discord.com/users/438434841617367080'} target='_blank'>
+                                <FaDiscord />
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{
+                                duration: .1,
+                                type: 'spring',
+                                stiffness: 200,
+                                damping: 10,
+                            }}
+                        >
+                            <Link href={'mailto:probablyraging@gmail.com'} target='_blank'>
+                                <SiGmail />
+                            </Link>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }

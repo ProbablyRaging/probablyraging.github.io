@@ -1,23 +1,23 @@
 {
-  "name": "probablyraging-dev",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "axios": "^1.6.8",
-    "framer-motion": "^11.1.7",
-    "next": "14.2.2",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^5.1.0"
-  },
-  "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
-  }
+    "name": "probablyraging-dev",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "axios": "^1.6.8",
+        "framer-motion": "^11.1.7",
+        "next": "14.2.2",
+        "react": "^18",
+        "react-dom": "^18",
+        "react-icons": "^5.1.0"
+    },
+    "devDependencies": {
+        "postcss": "^8",
+        "tailwindcss": "^3.4.1"
+    }
 }

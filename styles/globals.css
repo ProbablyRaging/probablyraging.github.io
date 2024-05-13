@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'yaro-black';
-    src: url('/fonts/yaro-black.woff2') format('woff2')
-}
-
 body {
-    background-color: #353e3d;
+    background-color: #AB87F0;
     scroll-behavior: smooth;
 }
 
@@ -16,12 +11,40 @@ body {
     display: none;
 }
 
-.font-stroke {
-    -webkit-text-stroke: 2px #ed7d22;
-    color: transparent;
+.layered {
+    text-shadow: 5px 5px 0px #000,
+        10px 10px 0px #4ba7f8,
+        15px 15px 0px #000,
+        20px 20px 0px #35d8b2,
+        25px 25px 0px #000,
+        30px 30px 0px #c638e2,
+        35px 35px 0px #000,
+        40px 40px 0px #ff9f2a,
+        45px 45px 0px #000,
+        50px 50px 0px #83f356,
+        55px 55px 0px #000,
+        60px 60px 0px #75b4ec,
+        65px 65px 0px #000,
+        70px 70px 0px #ff6c6c,
+        75px 75px 0px #000,
+        75px 75px 50px #000;
 }
 
-.bg-glass {
-    background-color: rgb(0 0 0 / 60%);
-    backdrop-filter: blur(5px);
+.layered-sm {
+    text-shadow: 2px 2px 0px #000,
+        4px 4px 0px #4ba7f8,
+        6px 6px 0px #000,
+        8px 8px 0px #35d8b2,
+        10px 10px 0px #000,
+        12px 12px 0px #c638e2,
+        14px 14px 0px #000,
+        16px 16px 0px #ff9f2a,
+        18px 18px 0px #000,
+        20px 20px 0px #83f356,
+        22px 22px 0px #000,
+        24px 24px 0px #75b4ec,
+        26px 26px 0px #000,
+        28px 28px 0px #ff6c6c,
+        30px 30px 0px #000,
+        32px 32px 50px #000;
 }

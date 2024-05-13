@@ -7,18 +7,15 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'base': '#353e3d',
-                'dazzle': '#ed7d22',
-                'overlay': '#151918'
+                'base': '#AB87F0',
+                'dazzle': '#CEFE23',
+                'alt': '#7251b1'
             },
             styles: {
                 'backdrop-blur-glass': {
                     'backdrop-filter': 'blur(10px)',
                     'background-color': 'rgba(255, 255, 255, 0.7)'
                 },
-            },
-            fontFamily: {
-                'yaro-black': ['yaro-black', 'sans-serif'],
             },
         },
     },

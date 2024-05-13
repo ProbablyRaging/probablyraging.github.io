@@ -1,29 +1,7 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
-import Navbar from './Navbar';
-import Footer from './Footer';
-
-export const ScreenContext = createContext(false);
 
 export default function Layout({ children }) {
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 930);
-        };
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    useEffect(() => {
-        console.log(isSmallScreen);
-    }, [isSmallScreen])
-
     return (
         <React.Fragment>
             <Head>
@@ -35,7 +13,7 @@ export default function Layout({ children }) {
                 <meta name='author' content='probablyraging' />
 
                 <meta httpEquiv='content-language' content='en' />
-                <meta name="theme-color" content="#151918" />
+                <meta name="theme-color" content="#AB87F0" />
 
                 <meta property='og:title' content='probablyraging.dev' />
                 <meta property='og:description' content='Creating good shit since 2016' />
@@ -50,13 +28,8 @@ export default function Layout({ children }) {
 
                 <link rel='canonical' href='https://shitestate.io' />
             </Head>
-            <Script src='//code.tidio.co/9n1rsvfxyx3xdjx5haw0ckqtuumdvqid.js' />
 
-            <ScreenContext.Provider value={isSmallScreen}>
-                <Navbar />
-                {children}
-                <Footer />
-            </ScreenContext.Provider>
+            {children}
         </React.Fragment>
     )
 }
